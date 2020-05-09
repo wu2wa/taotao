@@ -121,7 +121,7 @@ table.on('toolbar(itemToolBar)',function(obj) {
 				var data = checkStatus.data;
 				$.ajax({
 					type : "POST",
-					url : "/item/commodityLowerShelves",
+					url : "/item/commodityShelves",
 					contentType : "application/json;charset=utf-8",
 					data : JSON.stringify(data),
 					dataType : "json",
