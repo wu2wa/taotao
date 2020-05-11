@@ -2,6 +2,7 @@ package com.taotao.mapper;
 
 
 import com.taotao.pojo.CommodityResult;
+import com.taotao.pojo.TbItem;
 import com.taotao.pojo.TbItemCat;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

@@ -14,4 +14,5 @@ public interface ItemService {
     TaotaoResult updateItem(List<TbItem> tbItem, int type, Date date);
 
 
+    LayuiResult findTbItemSearch(Integer page, Integer limit, String title, Integer priceMin, Integer priceMax, Long cId);
 }

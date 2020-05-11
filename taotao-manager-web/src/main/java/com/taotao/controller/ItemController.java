@@ -62,4 +62,12 @@ public class ItemController {
         TaotaoResult result = itemService.updateItem(tbItem,0,date);
         return result;
     }
+    @RequestMapping("/searchItem")
+    @ResponseBody
+    public LayuiResult getTbItem(Integer page, Integer limit, String title, Integer priceMin, Integer priceMax, Long cId){
+
+        LayuiResult results = itemService.findTbItemSearch(page,limit,title,priceMin,priceMax,cId);
+
+        return results;
+    }
 }

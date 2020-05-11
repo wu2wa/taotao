@@ -14,6 +14,28 @@
         </where>
     </update>
 
+    <select id="findTbItemSearch" resultType="int">
+        SELECT count(*) FROM tbitem
+        <where>
+            <if test="title != '' || title != null">
+                title LIKE "%${title}%"
+            </if>
+                and price BETWEEN #{priceMin} AND #{priceMax}
+        </where>
+
+    </select>
+
+    <select id="findTbItemByDate" resultType="com.taotao.pojo.TbItem">
+        SELECT * FROM tbitem
+        <where>
+            <if test="title != '' || title != null">
+                title LIKE "%${title}%"
+            </if>
+            and price BETWEEN #{priceMin} AND #{priceMax}
+        </where>
+        limit #{page},#{limit}
+    </select>
+
 
 
 

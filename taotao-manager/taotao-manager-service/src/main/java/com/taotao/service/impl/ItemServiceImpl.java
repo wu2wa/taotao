@@ -57,5 +57,25 @@ public class ItemServiceImpl implements ItemService {
         return TaotaoResult.build(500,"商品删除失败",null);
     }
 
+    @Override
+    public LayuiResult findTbItemSearch(Integer page, Integer limit, String title, Integer priceMin, Integer priceMax, Long cId) {
+        if (priceMin == null){
+            priceMin = 0;
+        }
+        if (priceMax == null){
+            priceMax = 100000;
+        }
+
+        LayuiResult result = new LayuiResult();
+        result.setCode(0);
+        result.setMsg("");
+        int count = TbItemMapper.findTbItemSearch(page,limit,title,priceMin,priceMax,cId);
+        result.setCount(count);
+        List<TbItem> date = TbItemMapper.findTbItemByDate(page,limit,title,priceMin,priceMax,cId);
+        result.setData(date);
+
+        return result;
+    }
+
 
 }
