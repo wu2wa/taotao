@@ -29,7 +29,7 @@ public class ItemController {
         return result;
     }
 
-    @RequestMapping("showItemPage")
+    @RequestMapping("/showItemPage")
     @ResponseBody
     public LayuiResult findTbItemByPage(int page,int limit){
         LayuiResult result = itemService.findTbItemByPage(page,limit);
