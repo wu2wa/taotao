@@ -2,6 +2,7 @@ package com.taotao.mapper;
 
 
 import com.taotao.pojo.TbItem;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
@@ -23,4 +24,6 @@ public interface TbItemMapper {
     int findTbItemSearch(@Param("page") Integer page,@Param("limit") Integer limit,@Param("title") String title,@Param("priceMin") Integer priceMin,@Param("priceMax") Integer priceMax,@Param("cId") Long cId);
 
     List<TbItem> findTbItemByDate(@Param("page") Integer page,@Param("limit") Integer limit,@Param("title") String title,@Param("priceMin") Integer priceMin,@Param("priceMax") Integer priceMax,@Param("cId") Long cId);
+    @Insert("INSERT INTO tbitem VALUE(#{id},#{title},#{sellPoint},#{price},#{num},#{barcode},#{image},#{cId},#{status},#{created},#{updated})")
+    int addItem(TbItem tbItem);
 }
