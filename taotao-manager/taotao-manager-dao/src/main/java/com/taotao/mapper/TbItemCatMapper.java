@@ -13,4 +13,5 @@ public interface TbItemCatMapper {
     @Select("SELECT * FROM tbitemcat where parentId = #{id}")
     List<TbItemCat> findCommodityByAll(@Param("id") Long id);
 
+
 }
